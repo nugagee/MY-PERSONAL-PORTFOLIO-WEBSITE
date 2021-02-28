@@ -1,0 +1,962 @@
+@import url("https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css");
+@import url("https://fonts.googleapis.com/css2?family=Fredoka+One&family=M+PLUS+Rounded+1c:wght@400;500;700&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Fredoka One", cursive;
+  font-family: "M PLUS Rounded 1c", sans-serif;
+}
+/*-------------------------UTILITY SECTION--------------------------*/
+ul {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+}
+button {
+  width: 120px;
+  height: 42px;
+  border-radius: 10px;
+  outline: none;
+  border: none;
+  font-size: ;
+  font-weight: 600;
+  margin: 20px 5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+button:hover {
+  transform: scale(1.1);
+}
+
+button:active {
+  background: transparent;
+  border: 1px solid black;
+  border-bottom: 2px solid black;
+}
+html {
+  scroll-behavior: smooth;
+}
+body {
+  height: 100%;
+  width: 100%;
+  overflow-y: auto;
+  overflow-x: hidden;
+  transition: all 0.4s ease;
+}
+/*-------------------------NAV MENU SECTION--------------------------*/
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 40px;
+  width: 100%;
+  background: white;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.263);
+  padding: 10px 70px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1000;
+}
+input[type="checkbox"]:checked ~ .outer nav {
+  background: transparent;
+}
+nav .logo h2 {
+  font-size: 0.8rem;
+  font-weight: 800;
+  color: #505050;
+  cursor: pointer;
+  user-select: none;
+}
+input[type="checkbox"]:checked ~ .outer nav .logo h2 {
+  color: white;
+}
+nav .menu {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+nav .menu ul {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 5px;
+}
+nav .menu ul a {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 5px;
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: #505050;
+  cursor: pointer;
+  text-transform: uppercase;
+}
+input[type="checkbox"]:checked ~ .outer nav .menu ul a {
+  color: white;
+}
+nav .menu ul a:hover {
+  color: red;
+}
+input[type="checkbox"]:checked ~ .outer nav .menu ul a:hover {
+  color: red;
+}
+nav .menu ul a.active {
+  color: red;
+}
+input[type="checkbox"]:checked ~ .outer nav .menu ul a:active {
+  color: red;
+}
+/*-------------------------OUTER BODY SECTION--------------------------*/
+.container .outer {
+  background: #f2f2f2;
+  height: 100%;
+  width: 100vw;
+  transition: all 0.4s ease;
+}
+input[type="checkbox"]:checked ~ .outer {
+  background: #092c3e;
+}
+.outer .content {
+  position: relative;
+  width: 100vw;
+  height: 100%;
+  background: #fff;
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+input[type="checkbox"]:checked ~ .outer .content {
+  background: #092c3e;
+}
+/*-------------------------TOGGLE SWITCH  SECTION--------------------------*/
+.content .toggle {
+  position: fixed;
+  right: 2%;
+  top: 2%;
+  background: #092c3e;
+  width: 45px;
+  height: 20px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 2px 5px;
+  cursor: pointer;
+  z-index: 2000;
+  transform: scale(0.9);
+}
+
+input[type="checkbox"]:checked ~ .outer .toggle {
+  background: white;
+}
+.content .toggle i {
+  color: white;
+  font-size: 0.7rem;
+}
+input[type="checkbox"]:checked ~ .outer .content .toggle i {
+  color: #092c3e;
+}
+.toggle .circle {
+  width: 15px;
+  height: 15px;
+  background: #fff;
+  border-radius: 50%;
+  margin-left: 0px;
+  transition: all 0.3s ease;
+  position: absolute;
+}
+input[type="checkbox"]:checked ~ .outer .circle {
+  margin-left: 21px;
+  background: #092c3e;
+}
+/*-------------------------HOME LANDING PAGE SECTION--------------------------*/
+section {
+  position: relative;
+  width: 100vw;
+  height: 90vh;
+  background: rgb(255, 255, 255);
+  display: flex;
+  align-items: center;
+  padding: 0 5% 0 15%;
+  overflow: hidden;
+}
+section::after {
+  position: absolute;
+  content: "";
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: 45%;
+  background: #eaeaea7e;
+}
+input[type="checkbox"]:checked ~ .outer section {
+  background: #092c3e;
+}
+input[type="checkbox"]:checked ~ .outer section:after {
+  background: #eaeaea0f;
+}
+section .detail {
+  color: #505050;
+  z-index: 10;
+  width: 50%;
+  animation: slideInFromLeft 1s ease-in;
+}
+input[type="checkbox"]:checked ~ .outer .detail {
+  color: #f2f2f2;
+}
+section .detail p {
+  font-weight: 700;
+}
+section .detail h2 {
+  font-size: 3rem;
+  font-weight: 700;
+}
+section .detail h3 {
+  font-weight: 600;
+  max-width: 80%;
+}
+.btn button:nth-child(1) {
+  border: 1px solid black;
+}
+input[type="checkbox"]:checked ~ .outer .btn button:nth-child(1) {
+  background: transparent;
+  color: white;
+  border: 1px solid white;
+}
+.btn button:nth-child(2) {
+  background: #505050;
+  border: transparent;
+  color: white;
+}
+input[type="checkbox"]:checked ~ .outer .btn button:nth-child(2) {
+  background: white;
+  color: #092c3e;
+}
+.content .details {
+  width: 400px;
+  padding: 15px;
+  color: #092c3e;
+}
+input[type="checkbox"]:checked ~ .outer .details {
+  color: #fff;
+}
+section .img {
+  width: 50%;
+  z-index: 1;
+  margin: 10% 10% 0 0;
+  animation: slideInFromRight 1s ease-in;
+}
+/*-------------------------ABOUT SECTION--------------------------*/
+.about {
+  position: relative;
+  width: 70%;
+  height: auto;
+  border-radius: 20px;
+  margin: 0 auto;
+  transform: translateY(-70px);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.263);
+  padding: 10px 25px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  background: rgb(255, 255, 255);
+  z-index: 2;
+  animation: slideInFromBottom 1s ease-in;
+}
+input[type="checkbox"]:checked ~ .outer .about {
+  background: #092c3e;
+}
+.about .img-round {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background: #transparent;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.263);
+  object-fit: cover;
+  animation: slideInFromLeft 1s ease-in;
+}
+
+.about .img-round img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  padding: 2px;
+}
+.about .det {
+  width: 70%;
+  height: 85%;
+  color: #836a6a;
+  padding: 10px 0px;
+  animation: slideInFromRight 1s ease-in;
+}
+input[type="checkbox"]:checked ~ .outer .det {
+  color: white;
+}
+.about .det h2 {
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+.about .det h3 {
+  font-size: 0.8rem;
+  font-weight: 700;
+  line-height: 3em;
+}
+.about .det p {
+  font-size: 0.7rem;
+}
+/*-------------------------TOPIC UTILITY SECTION--------------------------*/
+.topic {
+  width: 70%;
+  margin: 0 auto;
+}
+.title {
+  position: relative;
+  width: 100%;
+}
+.title::after {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 1px;
+  background: #505050;
+  top: 50%;
+  left: 0;
+  z-index: 1;
+  transform: translateY(50%);
+}
+input[type="checkbox"]:checked ~ .outer .title::after {
+  background: white;
+}
+.title h2 {
+  display: inline-block;
+  background: #f2f2f2;
+  padding: 0 10px;
+  color: #505050;
+  z-index: 5;
+}
+input[type="checkbox"]:checked ~ .outer .title h2 {
+  color: white;
+  background: #092c3e;
+}
+/*-------------------------PORTFOLIO SECTION--------------------------*/
+.portfolio .project {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 100%;
+  padding: 20px;
+}
+.portfolio .project .pro-ima {
+  width: 300px;
+  height: 200px;
+  margin: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.633);
+  border-radius: 10px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.portfolio .project .pro-ima:nth-child(even) {
+  animation: slideInFromRight 1s ease-in;
+}
+.portfolio .project .pro-ima:nth-child(odd) {
+  animation: slideInFromLeft 1s ease-in;
+}
+.portfolio .project .pro-ima:hover {
+  transform: scale(1.1);
+}
+.portfolio .project .pro-ima img {
+  width: 100%;
+  height: 100%;
+}
+.portfolio .see-more {
+  position: relative;
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 90px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  transform: translatey(-20px);
+}
+.see-more a {
+  background: #505050;
+  border-radius: 10px;
+  color: aliceblue;
+  padding: 5px 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+input[type="checkbox"]:checked ~ .outer .see-more a {
+  background: transparent;
+  border: 1px solid white;
+}
+.see-more a:hover {
+  transform: scale(1.1);
+}
+.see-more a:active {
+  background: transparent;
+  border: 1px solid black;
+  color: #505050;
+}
+/*-------------------------SERVICES SECTION--------------------------*/
+.services .serv-det {
+  padding: 20px;
+  text-align: center;
+  width: 100%;
+}
+.serv-det .sub-head h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #181818;
+}
+input[type="checkbox"]:checked ~ .outer .serv-det .sub-head h2 {
+  color: white;
+}
+.serv-det .det-card {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.det-card .card {
+  width: 250px;
+  height: 300px;
+  background: #505050;
+  border-radius: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.653);
+  margin: 10px;
+  color: #fff;
+  position: relative;
+  padding: 25px;
+}
+input[type="checkbox"]:checked ~ .outer .det-card .card {
+  background: transparent;
+}
+.det-card .card:nth-child(even) {
+  animation: slideInFromRight 1s ease-in;
+}
+.det-card .card:nth-child(odd) {
+  animation: slideInFromLeft 1s ease-in;
+}
+.det-card .card span {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: white;
+  color: #505050;
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 600;
+}
+.det-card .card h4 {
+  border-bottom: 2px solid white;
+  display: inline-block;
+  margin: 10px 0 10px 0;
+  font-weight: 600;
+}
+.det-card .card p {
+  font-size: 0.75rem;
+}
+/*-------------------------CONTACT SECTION--------------------------*/
+.contact .cont-det {
+  padding: 40px;
+}
+.contact .cont-det h4 {
+  color: #505050;
+}
+input[type="checkbox"]:checked ~ .outer .contact .cont-det h4 {
+  color: white;
+}
+/*-------------------------FORM SECTION--------------------------*/
+.contact .form-box {
+  width: 70%;
+  padding: 0 40px;
+  margin-bottom: 20px;
+}
+
+.form-box h2 {
+  display: inline-block;
+  color: #505050;
+  font-weight: 700;
+  font-size: 1.1rem;
+}
+input[type="checkbox"]:checked ~ .outer .form-box h2 {
+  color: white;
+}
+.form-box .input-box {
+  width: 100%;
+  position: relative;
+  height: 40px;
+  margin: 5px 0;
+}
+.input-box input {
+  position: absolute;
+  width: 100%;
+  height: 30px;
+  background: #50505058;
+  border: 2px solid transparent;
+  border-radius: 5px;
+  padding-left: 10px;
+  outline: none;
+  transition: 0.3s ease;
+  margin: 5px 0;
+}
+
+.input-box label {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 15px;
+  font-weight: 1.1rem;
+  color: rgb(118, 113, 113);
+  pointer-events: none;
+  transition: 0.3s ease;
+}
+input[type="checkbox"]:checked ~ .outer .input-box label {
+  color: white;
+}
+.form-box .input-box input:focus,
+.form-box .input-box input:valid {
+  background: transparent;
+  border-color: #505050;
+  color: white;
+}
+
+.form-box .input-box input:focus ~ label,
+.form-box .input-box input:valid ~ label {
+  top: 5px;
+  background: white;
+  color: #505050;
+  font-size: 0.7rem;
+}
+input[type="checkbox"]:checked
+  ~ .outer
+  .form-box
+  .input-box
+  input:focus
+  ~ label,
+.form-box .input-box input:valid ~ label {
+  background: #092c3e;
+  color: white;
+}
+.form-box .mess-box {
+  width: 100%;
+  height: 70px;
+  position: relative;
+}
+.form-box .mess-box textarea {
+  width: 100%;
+  height: 100%;
+  resize: none;
+  outline: none;
+  background: #50505058;
+  border: 2px solid transparent;
+  border-radius: 5px;
+  padding: 5px;
+  font-size: 0.9rem;
+}
+.form-box .mess-box label {
+  position: absolute;
+  top: 5px;
+  left: 10px;
+  font-weight: 1.1rem;
+  color: rgb(118, 113, 113);
+  pointer-events: none;
+  transition: 0.3s ease;
+  font-size: 0.9rem;
+}
+input[type="checkbox"]:checked ~ .outer .form-box .mess-box label {
+  color: white;
+}
+.form-box .mess-box textarea:focus,
+.form-box .mess-box textarea:valid {
+  background: white;
+  border-color: #505050;
+}
+input[type="checkbox"]:checked ~ .outer .form-box .mess-box textarea:focus,
+.form-box .mess-box textarea:valid {
+  background: transparent;
+  border: 2px solid #505050;
+  color: white;
+}
+.form-box .mess-box textarea:focus ~ label,
+.form-box .mess-box textarea:valid ~ label {
+  top: -6px;
+  background: white;
+  color: #505050;
+  font-size: 0.7rem;
+}
+input[type="checkbox"]:checked
+  ~ .outer
+  .form-box
+  .mess-box
+  textarea:focus
+  ~ label,
+.form-box .mess-box textarea:valid ~ label {
+  background: #092c3e;
+  color: white;
+}
+.form-box .input-box input[type="Submit"] {
+  background: #505050;
+  color: #fff;
+  letter-spacing: 1px;
+  cursor: pointer;
+}
+input[type="checkbox"]:checked
+  ~ .outer
+  .form-box
+  .input-box
+  input[type="Submit"] {
+  background: white;
+  border: transparent;
+  font-weight: 800;
+  color: #092c3e;
+}
+.form-box .input-box input[type="Submit"]:hover {
+  background: transparent;
+  border: 2px solid #50505058;
+  color: #505050;
+  font-weight: 700;
+}
+input[type="checkbox"]:checked
+  ~ .outer
+  .form-box
+  .input-box
+  input[type="Submit"]:hover {
+  transform: scale(1.1);
+}
+
+.form-box .input-box input[type="Submit"]:active {
+  background: #5050508b;
+  border: 2px solid #50505058;
+  color: rgb(239, 239, 239);
+  font-weight: 700;
+}
+input[type="checkbox"]:checked
+  ~ .outer
+  .form-box
+  .input-box
+  input[type="Submit"]:active {
+  background: transparent;
+  border: 2px solid white;
+  color: white;
+}
+/*--------------------------FOOTER SECTION-----------------------*/
+footer {
+  width: 100vw;
+  height: 200px;
+  text-align: center;
+  color: #fff;
+  background-color: #505050;
+  padding-top: 50px;
+}
+input[type="checkbox"]:checked ~ .outer footer {
+  background: #f2f2f2;
+  color: #092c3e;
+  font-weight: 800;
+}
+footer h3 {
+  letter-spacing: 5px;
+  font-size: 1.4rem;
+}
+footer p {
+  font-size: 0.7rem;
+}
+
+footer .social a {
+  margin: 5px;
+  height: 50px;
+  width: 50px;
+  cursor: pointer;
+}
+footer .social a i {
+  background: white;
+  border-radius: 5px;
+  padding: 5px;
+  margin: 20px 0;
+  color: #505050;
+  transition: all 0.3s ease;
+}
+input[type="checkbox"]:checked ~ .outer footer .social a i {
+  background: #092c3e;
+  color: white;
+}
+footer .social a:hover i {
+  transform: translateY(-3px);
+}
+footer .social a:active i {
+  background: transparent;
+  border: 1px solid white;
+  color: white;
+}
+/*--------------------FIXED TOP SCROLL--------------------*/
+.fixed .top-fixed {
+  position: fixed;
+  bottom: 20px;
+  right: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 20;
+}
+.fixed .top-fixed a {
+  color: white;
+  background: red;
+  padding: 0 10px;
+  border-radius: 5px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.653);
+  font-size: 0.7rem;
+  cursor: pointer;
+}
+.fixed .top-fixed a:hover {
+  transform: scale(1.1);
+}
+/*----------------------------------FIXED SOCIAL ICON SECTION-----------------------*/
+.fixed .social-fixed {
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  top: 0;
+  bottom: 0;
+  left: 35px;
+  height: 170px;
+  width: 30px;
+  background: rgb(255, 255, 255);
+  padding: 5px;
+  z-index: 10;
+}
+input[type="checkbox"]:checked ~ .outer .fixed .social-fixed {
+  background: #092c3e;
+}
+.fixed .social-fixed::after {
+  content: "";
+  position: absolute;
+  height: 400px;
+  width: 1px;
+  background: #50505054;
+  margin: auto;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: -2;
+}
+input[type="checkbox"]:checked ~ .outer .fixed .social-fixed::after {
+  background: #092c3e;
+}
+.fixed .social-fixed a i {
+  margin: 0;
+  color: #505050bb;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  font-size: 20px;
+  background: white;
+}
+input[type="checkbox"]:checked ~ .outer .fixed .social-fixed a i {
+  color: white;
+  background: #092c3e;
+}
+.fixed .social-fixed a:hover i {
+  transform: scale(1.1);
+}
+.fixed .social-fixed a:active i {
+  color: rgba(255, 0, 0, 0.461);
+}
+/*------------------TOGGLE SWITCH------------------*/
+#switch {
+  display: none;
+}
+/*---------------------SCROLLBAR SECTION-------------*/
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  border: 7px solid #505050;
+  box-shadow: inset 0 0 2px 2px rgba(0, 0, 0, 0.4);
+}
+::-webkit-scrollbar-thumb {
+  background: black;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(white, #505050);
+}
+/*-------------------------RESPONSIVENESS SECTION--------------------------*/
+@media (max-width: 688px) {
+  /*--------------------NAV RESPONSIVE----------------------------*/
+  nav {
+    height: 30px;
+  }
+  nav .logo h2 {
+    font-size: 0.6rem;
+  }
+  nav .menu ul a {
+    font-size: 0.6rem;
+  }
+  /*--------------TOGGLE RESPONSIVE -----------------------*/
+  .content .toggle {
+    top: 1%;
+    transform: scale(0.7);
+  }
+  .content .toggle i {
+    color: white;
+  }
+  input[type="checkbox"]:checked ~ .outer .content .toggle i {
+    color: #092c3e;
+  }
+  /*--------------SECTION RESPONSIVE -----------------------*/
+  section .detail {
+    width: 100%;
+  }
+  section {
+    padding-left: 20%;
+  }
+  section .detail h2 {
+    font-size: 2.5rem;
+  }
+  section .detail h3 {
+    font-size: 0.9rem;
+  }
+  section .img {
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0.6;
+  }
+  button {
+    width: 100px;
+    height: 35px;
+  }
+  /*------------------ABOUT RESPONSIVE--------*/
+  .about {
+    padding: 25px;
+    justify-content: center;
+  }
+  .about .img-round {
+    width: 120px;
+    height: 120px;
+  }
+  .about .det {
+    width: 100%;
+  }
+  .about .det h2 {
+    font-size: 1rem;
+  }
+  .about .det p {
+    font-size: 0.6rem;
+  }
+  /*-------------------------TITLE RESPONSIVENESS SECTION--------------------------*/
+  .title {
+    font-size: 0.7rem;
+  }
+  /*-------------------------PORTFOLIO RESPONSIVENESS SECTION--------------------------*/
+  .portfolio .project .pro-ima {
+    width: 250px;
+    height: 150px;
+  }
+  .portfolio .see-more {
+    font-size: 0.7rem;
+    margin-right: 50px;
+    letter-spacing: 1px;
+  }
+  /*-------------------------SERVICES RESPONSIVENESS  SECTION--------------------------*/
+  .serv-det .sub-head h2 {
+    font-size: 1.6rem;
+  }
+  /*-------------------------CONTACT RESPONSIVENESS  SECTION--------------------------*/
+  .contact .cont-det h4 {
+    text-align: center;
+    font-size: 0.8rem;
+  }
+  .contact .form-box {
+    width: 100%;
+  }
+  /*-------------------------FORM RESPONSIVENESS  SECTION--------------------------*/
+  .input-box label,
+  .form-box .mess-box label {
+    font-size: 0.7rem;
+  }
+  .form-box .input-box input:focus ~ label,
+  .form-box .input-box input:valid ~ label {
+    font-size: 0.5;
+  }
+  .form-box .mess-box textarea {
+    font-size: 0.7;
+  }
+  .form-box .mess-box textarea:focus ~ label,
+  .form-box .mess-box textarea:valid ~ label {
+    font-size: 0.5;
+  }
+  /*-------------------------FOOTER RESPONSIVENESS  SECTION--------------------------*/
+  footer {
+    height: 170px;
+    padding: 30px;
+  }
+  footer h3 {
+    font-size: 1rem;
+  }
+  footer p {
+    font-size: 0.5rem;
+  }
+  footer .social a i {
+    transform: scale(0.7);
+    margin: 10px 0;
+  }
+  .fixed .top-fixed a {
+    transform: scale(0.7);
+  }
+  .fixed .social-fixed a i {
+    transform: scale(0.7);
+  }
+}
+/*-------------------------ANIMATION   SECTION--------------------------*/
+@keyframes slideInFromLeft {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInFromRight {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInFromTop {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInFromBottom {
+  0% {
+    transform: translateY(100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
